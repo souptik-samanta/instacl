@@ -937,3 +937,65 @@ img {
   .side-menu__footer-copyright {
     text-transform: uppercase;
   }
+  
+  /* Profile Button */
+  .profile-button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+  }
+  .profile-button__border {
+    display: none;
+  
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--text-dark);
+    border-radius: 50%;
+  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .profile-button:focus .profile-button__border {
+    display: block;
+  }
+  
+  .profile-button__picture {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  
+    overflow: hidden;
+    position: relative;
+  }
+  .profile-button__picture::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  
+    border: 1px solid var(--img-border);
+    border-radius: 50%;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 767px) {
+    .header__buttons--desktop {
+      display: none;
+    }
+  
+    /* Fix post medias indicators bugs on mobile */
+    .post__medias {
+      gap: 1px;
+    }
+  }
+  
+  @media (min-width: 620px) {
+    .content-container {
+      padding: 30px 0 24px;
+    }
